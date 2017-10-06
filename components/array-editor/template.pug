@@ -8,32 +8,31 @@
 //- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
-viw(split="rows", spaced="3", :class="$css.component")
-	viw(split="cols")
-		viw
-			ui-select(
-				has-search,
-				v-model="currentItem",
-				search-placeholder="Suchen",
-				:options="suggestions",
-				:loading="false",
-			)
+viw(split="rows", spaced="1", :class="$css.component")
+	viw(split="cols", stretch, spaced="1")
+		selector(
+			has-search,
+			v-model="currentItem",
+			search-placeholder="Suchen",
+			:options="suggestions",
+			:loading="false",
+		)
 
-				template(slot="option", scope="item")
-					slot(name="item", :item="item.option", v-if="item.option")
+			template(slot="option", scope="item")
+				slot(name="item", :item="item.option", v-if="item.option")
 
-				template(slot="no-results")
-					span No results
+			template(slot="no-results")
+				span No results
 
-				template(slot="help")
+			template(slot="help")
 
-				template(slot="error")
-					h1 Error
+			template(slot="error")
+				h1 Error
 
-		viw(collapse, v-if="currentItem")
-			btn(icon="plus", @click="addCurrent")
+		viw(collapse)
+			btn(icon="plus", @click="addCurrent", :disabled="!currentItem")
 
-	viw(v-if="value")
+	viw(v-if="value", split="rows", spaced="1")
 		viw(split="cols", v-for="(item, index) in value", :key="index")
 			viw
 				slot(name="item", :item="item")

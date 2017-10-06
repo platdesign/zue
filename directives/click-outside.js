@@ -24,15 +24,15 @@ export default function(Vue, options) {
 			el.__vueClickOutside__ = handler
 
 			// add Event Listeners
-			//document.addEventListener('click', handler);
-			document.addEventListener('touchstart', handler)
+			document.addEventListener('click', handler);
+			//document.addEventListener('touchstart', handler)
 		},
 
 		unbind: function(el, binding) {
 			//console.log('unbind')
 			// Remove Event Listeners
-			//document.removeEventListener('click', el.__vueClickOutside__)
-			document.addEventListener('touchstart', el.__vueClickOutside__)
+			document.removeEventListener('click', el.__vueClickOutside__)
+			//document.addEventListener('touchstart', el.__vueClickOutside__)
 
 			el.__vueClickOutside__ = null
 

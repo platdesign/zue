@@ -20,6 +20,11 @@
 		white-space: nowrap;
 		outline: none;
 
+		&:disabled {
+			opacity: .5;
+			cursor: not-allowed;
+		}
+
 		&:active {
 			outline: none;
 			box-shadow: none;

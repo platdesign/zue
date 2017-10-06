@@ -48,7 +48,8 @@ export default {
 			type: String,
 			default: 'spinner'
 		},
-		to: true
+		to: true,
+		disabled: true
 	},
 
 	data() {

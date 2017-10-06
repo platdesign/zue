@@ -1,0 +1,28 @@
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+	Pug-Template for component
+
+	@name			selector
+	@project 	zue
+	@author 	Christian Blaschke <mail@platdesign.de>
+	@since		October 6th 2017, 4:49:56 pm
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+div(:class="$css.component", v-click-outside="clickOutside")
+	div(:class="$css.value", @click="isOpen = !isOpen")
+		div(v-if="$scopedSlots.option")
+			slot(name="option", :option="value")
+		div(v-else)
+			span {{ value }}
+
+
+	div(:class="$css.options", v-if="isOpen")
+		template(v-for="option in options")
+			div(:class="$css.option", @click="() => select(option)")
+				template(v-if="$scopedSlots.option")
+					slot(name="option", :option="option")
+
+				template(v-else)
+					span {{ option }}
+
+

@@ -13,6 +13,8 @@ import Btn from '../btn';
 import 'vue-awesome/icons/plus';
 import 'vue-awesome/icons/trash-o';
 
+import Selector from '../selector';
+
 export default {
 
 	name: 'array-editor',
@@ -34,7 +36,7 @@ export default {
 	},
 
 	components: {
-		//UiSelect,
+		Selector,
 		Btn
 	},
 

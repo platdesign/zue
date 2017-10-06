@@ -14,7 +14,7 @@ const ExampleLoader = require.resolve('./example-loader');
 
 const components = [];
 
-components.push('./src/dev-app/index.js');
+components.push('./dev-app/index.js');
 components.unshift('webpack-hot-middleware/client?noInfo=false&reload=true');
 
 module.exports = {
@@ -74,7 +74,7 @@ module.exports = {
 
 		new HtmlWebpackPlugin({
 			filename: 'index.html',
-			template: path.resolve('src', 'dev-app', 'index.html'),
+			template: path.resolve('dev-app', 'index.html'),
 			inject: true,
 			chunksSortMode: 'dependency',
 			cache: false

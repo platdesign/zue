@@ -1,0 +1,39 @@
+/**
+ * Styles for selector component.
+ *
+ * @name 			selector
+ * @project 	zue
+ * @author 		Christian Blaschke <mail@platdesign.de>
+ * @since			October 6th 2017, 4:49:56 pm
+ */
+
+.component {
+	position: relative;
+	flex: 1 1 auto;
+	display: flex;
+	flex-direction: column;
+
+	.value {
+		flex: 1 1 auto;
+		padding: 1em;
+		cursor: pointer;
+		background: var(--zue-color-silver-light);
+	}
+
+	.options {
+		position: absolute;
+		width: 100%;
+		top: 100%;
+		box-shadow: 0 0 1em 0 rgba(black, .2);
+		background: white;
+		z-index: 1;
+
+		.option {
+			padding: 1em;
+			cursor: pointer;
+			&:hover {
+				background: rgba(black, .05);
+			}
+		}
+	}
+}
