@@ -27,6 +27,8 @@
 		box-shadow: 0 0 1em 0 rgba(black, .2);
 		background: white;
 		z-index: 1;
+		max-height: 20vh;
+		overflow: auto;
 
 		.option {
 			padding: 1em;
