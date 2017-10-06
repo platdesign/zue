@@ -1,0 +1,44 @@
+/**
+ * Styles for table component.
+ *
+ * @name 			table
+ * @project 	p17-0008-tribe-manager-app
+ * @author 		Christian Blaschke <mail@platdesign.de>
+ * @since			September 20th 2017, 9:57:26 pm
+ */
+
+.component {
+	width: 100%;
+	border-collapse: collapse;
+	table-layout: fixed;
+
+	td {
+		padding: 1em .5em;
+	}
+
+	thead, tr.afooter {
+		font-weight: 700;
+		background: var(--ci-color-primary);
+		color: white;
+
+		td {
+			&.sortable {
+				cursor: pointer;
+			}
+		}
+	}
+
+	tbody {
+		tr {
+			cursor: pointer;
+
+			&:nth-child(2n + 1) {
+				background: var(--ci-color-bg-ultralight);
+			}
+
+			&:hover {
+				background: var(--ci-color-bg-light);
+			}
+		}
+	}
+}

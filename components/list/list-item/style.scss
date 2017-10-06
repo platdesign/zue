@@ -1,0 +1,95 @@
+/**
+ * Styles for list-item component.
+ *
+ * @name 			list-item
+ * @project 	p17-0008-tribe-manager-app
+ * @author 		Christian Blaschke <mail@platdesign.de>
+ * @since			September 21st 2017, 11:31:36 am
+ */
+
+.component {
+	border-bottom: 1px solid #eaeaea;
+	display: flex;
+	background: white;
+	overflow: hidden;
+	position: relative;
+
+	&:focus {
+		outline: none;
+		box-shadow: inset 0 0 0 1000px var(--zue-color-primary__10);
+	}
+
+	.left {
+		flex: 0 0 auto;
+		display: flex;
+		align-items: center;
+	}
+	--absMove: 0;
+
+	> main {
+		--move: 0;
+		--translateX: calc(var(--move) * 1px);
+		--swipeNavWidth: 0;
+
+		flex: 1 1 auto;
+		transition: transform .4s;
+		transform: translateX(var(--translateX));
+		z-index: 1;
+		background: white;
+		user-select: none;
+
+		&.active {
+			transition: none;
+		}
+
+		&.open {
+			--translateX: calc((var(--move) * 1px) - (var(--swipeNavWidth) * 1px));
+		}
+
+	}
+
+	.right {
+		flex: 0 0 auto;
+		display: flex;
+		align-items: center;
+	}
+
+
+	.swipeNav {
+		--size: 0;
+
+		flex: 0 0 auto;
+		display: flex;
+		transition: min-width .4s;
+		min-width: calc(var(--size) * 1px);
+
+
+
+		&.mobile {
+			position: absolute;
+			right: 0;
+			top: 0;
+			bottom:0;
+			z-index: 0;
+
+			> * {
+				transition: transform .4s;
+			}
+
+			&.touchActive {
+				transition: none;
+
+				> * {
+					transition: none;
+				}
+
+				> *:nth-child(1):not(:last-child) {
+					transform: translateX(calc(100% - calc(var(--size)/2 * 1px)));
+
+				}
+			}
+		}
+
+
+	}
+}

@@ -1,0 +1,26 @@
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+	Pug-Template for component
+
+	@name			table
+	@project 	p17-0008-tribe-manager-app
+	@author 	Christian Blaschke <mail@platdesign.de>
+	@since		September 20th 2017, 9:57:26 pm
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+table(:class="$css.component")
+	thead
+		tr
+			td(
+				v-for="col in config.cols",
+				v-if="isColVisible(col)",
+				@click="toggleSort(col)",
+				:class="{ [$css.sortable]:col.sort }"
+			) {{ col.label }}
+	tbody
+		tr(v-for="(item, index) in _filteredData", @click="$emit('click-row', item)")
+			td(v-for="col in config.cols", v-if="isColVisible(col)")
+				slot(:name="col.slot" v-bind="item" :$index="index")
+	thead
+		tr(:class="$css.footer")
+			td.tc(:colspan="config.cols.filter(isColVisible).length") {{ _filteredData.length }} Zeilen

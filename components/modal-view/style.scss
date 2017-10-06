@@ -1,0 +1,36 @@
+/**
+ * Styles for modal-view component.
+ *
+ * @name 			modal-view
+ * @project 	p17-0008-tribe-manager-app
+ * @author 		Christian Blaschke <mail@platdesign.de>
+ * @since			October 5th 2017, 10:16:26 am
+ */
+
+.component {
+	position: absolute;
+	top:0;
+	left:0;
+	right: 0;
+	bottom: 0;
+	z-index: 999999;
+	background: rgba(black, .8);
+
+
+	.modal {
+		position: absolute;
+		left: 50%;
+		top: 20%;
+		transform: translate(-50%, 0);
+		background: #fff;
+		padding: 1em;
+		border-radius: 3px;
+
+		width: 90%;
+		max-width: 600px;
+	}
+
+}
+
+
+

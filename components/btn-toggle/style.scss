@@ -1,0 +1,28 @@
+/**
+ * Styles for btn-toggle component.
+ *
+ * @name 			btn-toggle
+ * @project 	p17-0008-tribe-manager-app
+ * @author 		Christian Blaschke <mail@platdesign.de>
+ * @since			September 21st 2017, 12:41:06 am
+ */
+
+.component {
+	border: none;
+	border-radius: 0;
+	user-select: none;
+	padding: .9em 1em;
+	flex: 1 1 auto;
+	cursor: pointer;
+	background: var(--ci-color-bg-light);
+	text-align: center;
+	white-space: nowrap;
+
+	&.active {
+		box-shadow: none;
+
+		background: var(--ci-color-primary-text);
+		color: var(--ci-color-primary);
+	}
+
+}

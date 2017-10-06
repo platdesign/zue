@@ -1,0 +1,50 @@
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+	Pug-Template for component
+
+	@name			list-item
+	@project 	p17-0008-tribe-manager-app
+	@author 	Christian Blaschke <mail@platdesign.de>
+	@since		September 21st 2017, 11:31:36 am
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+div(:class="$css.component", @click="$emit('click')", @keypress.enter="$emit('keypress-enter')")
+	div(:class="$css.left", v-if="$slots.asideLeft")
+		slot(name="asideLeft")
+			//- place icon here
+
+	template(v-if="hasSwipeNav && isMobile")
+		main(
+			ref="main",
+			v-stream:touchstart="touchStart$",
+			v-stream:touchmove="touchMove$",
+			v-stream:touchend="touchEnd$",
+			v-stream:touchcancel="touchEnd$",
+			:style="{ '--move': touching.move, '--swipeNavWidth': swipeNavWidth }",
+			:class="{ [$css.active]: touching.active, [$css.open]: touching.open }"
+		)
+			slot(name="default")
+
+	template(v-else)
+		main(ref="main")
+			slot(name="default")
+
+	//- main(
+	//- 	@touchstart="touchstart",
+	//- 	@touchmove="touchmove",
+	//- 	@touchend="touchend",
+	//- 	@touchcancel="touchend"
+	//- )
+		slot(name="default")
+
+	div(:class="$css.right", v-if="$slots.asideRight", @click.stop="")
+		slot(name="asideRight")
+
+	div(
+		ref="swipeNav",
+		:class="{ [$css.swipeNav]: true, [$css.mobile]: isMobile, [$css.touchActive]: touching && touching.active }",
+		v-if="hasSwipeNav",
+		@click.stop="",
+		:style="{ '--size': (touching && touching.move<=0) ? (Math.abs(touching.move) + (touching.open ? swipeNavWidth : 0)): swipeNavWidth }"
+	)
+		slot(name="swipeNav")

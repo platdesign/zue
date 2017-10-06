@@ -1,0 +1,17 @@
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+	Pug-Template for component
+
+	@name			foldable
+	@project 	p17-0008-tribe-manager-app
+	@author 	Christian Blaschke <mail@platdesign.de>
+	@since		October 5th 2017, 4:57:17 pm
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+div(:class="$css.component")
+	header(@click="toggle")
+		span {{ title }}
+
+	transition(name="transition-fold")
+		main(v-if="true")
+			slot(name="default")

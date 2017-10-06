@@ -1,0 +1,42 @@
+/**
+ * Styles for btn-circle component.
+ *
+ * @name 			btn-circle
+ * @project 	p17-0008-tribe-manager-app
+ * @author 		Christian Blaschke <mail@platdesign.de>
+ * @since			September 20th 2017, 1:08:19 pm
+ */
+
+.component {
+	--size: 2.4em;
+
+	font-size: var(--size);
+	width: 1em;
+	height: 1em;
+	background: var(--ci-color-primary);
+	color: var(--ci-color-primary-text);
+
+	border-radius: 1em;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+
+	> .content {
+		flex: 1 1 auto;
+		overflow: hidden;
+		height: 100%;
+		width: 100%;
+		display: flex;
+		align-items: center;
+
+		svg {
+			height: .55em;
+			width: auto;
+			display: block;
+			margin: .05em auto 0 auto;
+		}
+
+	}
+
+}

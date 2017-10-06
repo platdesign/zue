@@ -1,0 +1,20 @@
+/**
+ * Styles for address component.
+ *
+ * @name 			address
+ * @project 	p17-0008-tribe-manager-app
+ * @author 		Christian Blaschke <mail@platdesign.de>
+ * @since			October 1st 2017, 9:19:33 pm
+ */
+
+.component {
+	font-style: normal;
+
+	.zip, .city {
+		display: inline-block;
+	}
+
+	.city {
+		margin-left: .5em;
+	}
+}

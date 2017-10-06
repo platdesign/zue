@@ -1,0 +1,22 @@
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+	Pug-Template for component
+
+	@name			tabs
+	@project 	p17-0008-tribe-manager-app
+	@author 	Christian Blaschke <mail@platdesign.de>
+	@since		September 10th 2017, 12:22:22 pm
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+div(:class="{ [$css.component]: true, [$css.vertical]: vertical }")
+	header
+		li(
+			v-for="tab in tabs",
+			@click="activateTab(tab)",
+			:class="{ [$css.active]: isTabActive(tab) }"
+		)
+			fa(:name="tab.icon", v-if="tab.icon")
+			span {{ tab.label }}
+
+	main
+		slot

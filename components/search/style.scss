@@ -1,0 +1,84 @@
+/**
+ * Styles for search component.
+ *
+ * @name 			search
+ * @project 	p17-0008-tribe-manager-app
+ * @author 		Christian Blaschke <mail@platdesign.de>
+ * @since			September 29th 2017, 8:49:14 am
+ */
+
+.component {
+	position: relative;
+	font-size: .9em;
+	display: flex;
+	flex: 1 1 auto;
+
+	flex: 0 0 auto;
+	&.focus {
+		flex: .5 .5 auto!important;
+	}
+
+	transition: flex .4s;
+
+	input {
+		appearance: none;
+		border-radius: 1em;
+		border: 1px solid var(--zue-color-silver);
+		padding: 0 .6em;
+		line-height: 2;
+		z-index: 1;
+		transition: all .3s;
+
+		&:focus {
+			outline: none;
+			border-color: var(--zue-color-primary__70);
+		}
+	}
+
+
+
+	> button {
+		$width: 1.6em;
+
+		flex: 0 0 auto;
+		appearance: none;
+		padding:0;
+		margin: 0;
+		border:none;
+		background: transparent;
+		margin-left: 0 - $width;
+		line-height: 1.9;
+		color: var(--zue-color-silver-dark);
+		border-radius: 0;
+		width: $width;
+		cursor: pointer;
+		opacity: .3;
+		min-height: 110%;
+		opacity: 1;
+		transition: opacity .2s;
+		position: relative;
+		z-index: 10;
+
+		&:active {
+			opacity: .8;
+			outline: none;
+			box-shadow: none;
+		}
+
+		> svg {
+			$bgColor: white;
+			display: block;
+			transform: scale(1.1);
+			border-radius: 1em;
+			background: $bgColor;
+			box-shadow: 0 0 .2em 0 $bgColor, -.5em 0 .2em 0 $bgColor;
+		}
+	}
+
+	&:hover {
+		button {
+			opacity: 1;
+		}
+	}
+
+}

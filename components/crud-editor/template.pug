@@ -1,0 +1,92 @@
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+	Pug-Template for component
+
+	@name			crud-editor
+	@project 	p17-0008-tribe-manager-app
+	@author 	Christian Blaschke <mail@platdesign.de>
+	@since		September 21st 2017, 5:39:17 pm
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+viw(split="rows", :class="$css.component")
+
+	toolbar(:title="label[1]", :icon="icon", @click-title="showList")
+		search(v-model="searchQuery", :placeholder="label[1]", v-if="isListVisible")
+		li(v-if="isListVisible")
+			btn-circle(@click="openCreateEditor", icon="plus")
+		li(v-if="!isListVisible")
+			btn(@click="showList", icon="times", cs="transparent")
+
+	viw(scrollable, split="rows", spaced="0", :class="$css.createEditor", v-if="newModel")
+
+		form(@submit.prevent="saveNewModel")
+			//- h1 {{ label[0] }} erstellen
+			//- br
+			slot(name="editor", :model="newModel", :$isNew="true")
+			button(style="display: none;", ref="createFormSubmitButton")
+
+		viw(collapse, split="cols", spaced="3")
+			btn(
+				cs="primary",
+				icon="floppy-o",
+				:label="`${label[0]} Erstellen`",
+				@click="$refs.createFormSubmitButton.click()"
+			)
+
+
+	viw(scrollable, split="rows", spaced="0", :class="$css.updateEditor", v-if="updateModel")
+		form(@submit.prevent="saveUpdateModel")
+			//- h1 {{ label[0] }} bearbeiten
+			//- br
+			slot(name="editor", :model="updateModel", :$isNew="false")
+			button(style="display: none;", ref="updateFormSubmitButton")
+
+		viw(collapse, split="cols", spaced="3")
+			btn(
+				:confirm="deleteConfirmMessage",
+				cs="danger",
+				icon="trash-o",
+				:label="`Löschen`",
+				@click="deleteModel(updateModel)",
+				:is-pending="deletingModel === updateModel"
+			)
+
+			btn(
+				cs="primary",
+				icon="floppy-o",
+				:label="`Speichern`",
+				@click="$refs.updateFormSubmitButton.click()"
+			)
+
+
+	viw(split="rows", v-if="isListVisible")
+		list(
+			:data="data",
+			:searchQuery="searchQuery",
+			:itemHaystack="createItemHaystack",
+			:item-label="label"
+		)
+			template(slot="item", scope="item")
+				list-item(@click="openModelEditor(item)", :class="$css.listItem")
+					template(slot="default")
+						slot(name="list-item", :model="item", :$index="item.$index")
+							pre {{ item }}
+					template(slot="swipeNav", v-if="onDelete")
+						btn(
+							:class="$css.swipeNavBtn",
+							:confirm="deleteConfirmMessage",
+							cs="danger",
+							icon="trash-o",
+							@click="deleteModel(item.item)",
+							:is-pending="deletingModel === item.item"
+						)
+						//- btn(
+						//- 	:class="$css.swipeNavBtn",
+						//- 	cs="accent",
+						//- 	icon="trash-o"
+						//- )
+
+
+
+
+

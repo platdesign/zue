@@ -1,0 +1,71 @@
+/**
+ * Styles for view component.
+ *
+ * @name 			app
+ * @project 	zue
+ * @author 		Christian Blaschke <mail@platdesign.de>
+ * @since			October 6th 2017, 11:36:20 am
+ */
+
+.view--app {
+	display: grid;
+	position: absolute;
+	left:0;
+	right: 0;
+	top:0;
+	bottom: 0;
+
+	padding: 1em;
+
+	grid-template-columns: 240px auto;
+	grid-template-areas:
+		'aside main';
+
+	grid-gap: 1em;
+
+	> aside {
+		grid-area: aside;
+		background: #eaeaea;
+		overflow: auto;
+		border-radius: 3px;
+
+		> li {
+			list-style: none;
+			padding: .6em .8em;
+			background: rgba(black, .05);
+			margin-bottom: 1px;
+			cursor: pointer;
+
+			&:hover {
+				background: rgba(black, .1);
+			}
+
+			&.active {
+				background: rgba(black, .2);
+			}
+		}
+	}
+
+	> main {
+		grid-area: main;
+		border: 1px solid #eaeaea;
+		border-radius: 3px;
+		padding: 1em;
+		overflow: auto;
+	}
+
+
+
+	section.example {
+		> header {
+			background: #eaeaea;
+			font-size: 1.4em;
+			padding: .5em;
+		}
+
+		> main {
+			padding: 1em;
+		}
+
+	}
+}

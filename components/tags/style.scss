@@ -1,0 +1,81 @@
+/**
+ * Styles for tags component.
+ *
+ * @name 			tags
+ * @project 	p17-0008-tribe-manager-app
+ * @author 		Christian Blaschke <mail@platdesign.de>
+ * @since			September 30th 2017, 6:07:36 pm
+ */
+
+.component {
+	$tagHeight: 1.9em;
+
+	flex: 0 0 auto;
+	display: flex;
+	flex-wrap: wrap;
+	max-width: 100%;
+	align-items: center;
+
+	&:focus {
+		outline: none;
+	}
+
+		.tag {
+			flex: 0 0 auto;
+			display: flex;
+			align-items: center;
+
+			background: var(--zue-color-primary__20);
+			margin: 0 .4em .3em 0;
+			border-radius: .3em;
+			padding: .3em;
+			height: $tagHeight;
+
+			span {
+				display: block;
+				margin: 0 .2em 0 .2em;
+				color: var(--zue-color-primary);
+			}
+
+			> button {
+				padding: 0;
+				margin:0;
+				appearance: none;
+				line-height: 1em;
+				margin-left: 0;
+				cursor: pointer;
+				background: transparent;
+				border: none;
+				color: var(--zue-color-primary__70);
+			}
+		}
+
+
+		input {
+			flex: 1 1 auto;
+			margin: 0 .2em .3em 0;
+			border-radius: .3em;
+			padding: .3em;
+			padding-left: 0;
+			box-sizing: border-box;
+			border: none;
+			appearance: none;
+			outline: unset;
+			height: $tagHeight;
+			border-radius: 0;
+
+			&:first-child {
+				margin-left: 0;
+			}
+
+			&:focus {
+				outline: none;
+			}
+		}
+
+
+
+
+
+
+}

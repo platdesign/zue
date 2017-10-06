@@ -1,0 +1,20 @@
+/**
+ * Styles for table component.
+ *
+ * @name 			table
+ * @project 	p17-0008-tribe-manager-app
+ * @author 		Christian Blaschke <mail@platdesign.de>
+ * @since			September 20th 2017, 9:57:26 pm
+ */
+
+.component {
+
+	> .footer {
+		text-align: center;
+		padding: .5em 0 .75em 0;
+		font-size: .8em;
+		opacity: .6;
+		background:#eaeaea;
+	}
+
+}

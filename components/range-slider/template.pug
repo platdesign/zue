@@ -1,0 +1,39 @@
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+	Pug-Template for component
+
+	@name			range-slider
+	@project 	p17-0008-tribe-manager-app
+	@author 	Christian Blaschke <mail@platdesign.de>
+	@since		September 26th 2017, 11:04:02 pm
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+div(:class="$css.component")
+
+	div(
+		:class="$css.sliders",
+		:style="{ '--low': ((valMin-range[0])/step)/(totalSteps-1), '--high': ((valMax-range[0]-step)/step)/(totalSteps-1) }"
+	)
+		div(:class="$css.activeTrack")
+			div(:class="$css.minVal") {{ valMin }}
+			div(:class="$css.maxVal") {{ valMax }}
+
+		input(
+			type="range",
+			:class="$css.min",
+			v-model="valMin",
+			@input="updateMin",
+			:min="range[0]",
+			:max="range[1]-step",
+			:step="step",
+		)
+		input(
+			type="range",
+			:class="$css.max",
+			v-model="valMax",
+			@input="updateMax",
+			:min="range[0]+step",
+			:max="range[1]",
+			:step="step",
+		)
+

@@ -1,0 +1,131 @@
+/**
+ * Styles for range-slider component.
+ *
+ * @name 			range-slider
+ * @project 	p17-0008-tribe-manager-app
+ * @author 		Christian Blaschke <mail@platdesign.de>
+ * @since			September 26th 2017, 11:04:02 pm
+ */
+
+.component {
+	--thumb-size: 3.5em;
+	margin: 0 0em;
+
+
+
+	.sliders {
+		height: var(--thumb-size);
+		position: relative;
+		//border: 1px solid var(--zue-color-primary__70);
+		border-radius: var(--thumb-size);
+		background: var(--zue-color-primary__20);
+
+		--base: calc(100% - (var(--thumb-size)*2));
+
+		.activeTrack {
+			position: absolute;
+			left: calc( (var(--thumb-size) / 2) + ( var(--low) * var(--base) );
+			right: calc( var(--base) - calc( ( var(--high) * var(--base) ) - (var(--thumb-size)/2));
+			height: 100%;
+			background: var(--zue-color-primary__70);
+		}
+
+		.minVal, .maxVal {
+			position: absolute;
+			top: 50%;
+			z-index: 1000;
+			font-size: calc(var(--thumb-size) * .4);
+			color: white;
+			pointer-events: none;
+			text-align: center;
+			-webkit-font-smoothing: antialiased;
+			opacity: .8;
+			line-height: 1;
+		}
+
+		.minVal {
+			left: 0;
+			transform: translate(-50%, -50%);
+		}
+
+		.maxVal {
+			right: 0;
+			transform: translate(50%, -50%);
+		}
+
+		input[type="range"] {
+
+			@mixin thumb {
+
+				&::-webkit-slider-thumb {
+					position: relative;
+					z-index: 2;
+					appearance: none;
+
+					border: none;
+					background: var(--zue-color-primary);
+
+					height: var(--thumb-size);
+					width: calc(var(--thumb-size) / 1);
+					cursor: pointer;
+					transition: all .2s;
+
+					border-radius: var(--thumb-size);
+				}
+
+				&::-moz-range-thumb {
+					transform: scale(1); /* FF doesn't apply position it seems */
+					z-index: 1;
+
+					border: none;
+					background: var(--zue-color-primary);
+
+					height: var(--thumb-size);
+					width: calc(var(--thumb-size) / 1);
+					cursor: pointer;
+					transition: all .2s;
+
+					border-radius: var(--thumb-size);
+				}
+
+			}
+
+			&:focus, &:active {
+				outline: none;
+				z-index: 1;
+
+				&::-webkit-slider-thumb {
+					box-shadow: 0 0 0 calc(var(--thumb-size)*.7) var(--zue-color-primary__10a);
+				}
+			}
+
+
+
+			appearance: none;
+			position: absolute;
+			height: 100%;
+			width: calc(100% - var(--thumb-size));
+			background: transparent;
+			user-select: none;
+
+			&.min {
+				left: 0px;
+				right: var(--thumb-size);
+
+				@include thumb;
+			}
+			&.max {
+				left: var(--thumb-size);
+				right: 0px;
+
+				@include thumb;
+			}
+
+
+
+		}
+
+	}
+
+
+}

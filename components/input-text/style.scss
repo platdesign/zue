@@ -1,0 +1,62 @@
+/**
+ * Styles for input-text component.
+ *
+ * @name 			input-text
+ * @project 	p17-0008-tribe-manager-app
+ * @author 		Christian Blaschke <mail@platdesign.de>
+ * @since			September 25th 2017, 5:43:13 pm
+ */
+
+.component {
+	.inputs {
+
+		input {
+			padding: 0;
+			display: block;
+			outline: none;
+			border: none;
+			background: transparent;
+			width: 100%;
+			box-sizing: border-box;
+			border-radius: 0;
+			min-width: 1em;
+
+			&[readonly] {
+				user-select: none;
+			}
+
+			&:not([readonly]) {
+				&:focus + span {
+					color:var(--zue-color-primary);
+				}
+			}
+
+			&:-webkit-autofill {
+				background: transparent;
+				-webkit-box-shadow: 0 0 0 1000px white inset;
+			}
+
+		}
+
+		textarea {
+			display: block;
+			outline: none;
+			border: none;
+			background: transparent;
+			width: 100%;
+			box-sizing: border-box;
+			border-radius: 0;
+			padding: 0;
+
+			&[readonly] {
+				user-select: none;
+			}
+
+			&:focus + span {
+				color:var(--zue-color-primary);
+			}
+		}
+
+	}
+
+}

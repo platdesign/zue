@@ -1,0 +1,33 @@
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+	Pug-Template for component
+
+	@name			tags
+	@project 	p17-0008-tribe-manager-app
+	@author 	Christian Blaschke <mail@platdesign.de>
+	@since		September 30th 2017, 6:07:36 pm
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+div(:class="$css.component", tabindex="0", @focus.prevent.stop="!readable && $refs.input.focus()")
+	div(
+		:class="$css.tag",
+		v-for="(tag, index) in value"
+	)
+		span {{ tag }}
+		button(type="button", @click.stop.prevent="() => removeItem(index)", v-if="!readable")
+			fa(name="times-circle")
+
+	input(
+		v-if="!readable"
+		ref="input",
+		v-autowidth="{comfortZone: 0}",
+		v-model="inputLabel",
+		@keydown.enter="enterEvent",
+		@keydown.delete="removeLast",
+		@keydown.space.prevent="addCurrentInput",
+		@keydown.tab.prevent="addCurrentInput",
+		:placeholder="!value.length ? placeholder : false",
+		:id="id",
+		autocapitalize="none"
+	)
+

@@ -1,0 +1,17 @@
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+	Pug-Template for component
+
+	@name			address
+	@project 	p17-0008-tribe-manager-app
+	@author 	Christian Blaschke <mail@platdesign.de>
+	@since		October 1st 2017, 9:19:33 pm
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+address(:class="$css.component")
+	editable-text(v-model="_street", placeholder="Straße", :class="$css.street", :editable="!readonly", :id="streetId")
+	editable-text(v-model="_zip", placeholder="Plz", :class="$css.zip", :editable="!readonly")
+	editable-text(v-model="_city", placeholder="Stadt", :class="$css.city", :editable="!readonly")
+	editable-text(v-model="_state", placeholder="Bundesland", :class="$css.state", :editable="!readonly")
+	editable-text(v-model="_country", placeholder="Land", :class="$css.country", :editable="!readonly")
+

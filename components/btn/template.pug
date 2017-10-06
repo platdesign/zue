@@ -1,0 +1,21 @@
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+	Pug-Template for component
+
+	@name			btn
+	@project 	p17-0008-tribe-manager-app
+	@author 	Christian Blaschke <mail@platdesign.de>
+	@since		September 21st 2017, 7:35:05 pm
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+div(:class="$css.component")
+	button(:type="type", :class="{ [$css[`cs-${cs}`]]: true }", @click.stop="click")
+		fa(:class="$css.icon", :name="isPending ? pendingIcon : icon", :spin="isPending" v-if="icon")
+		span(v-if="$slots.default || label")
+			slot(name="default") {{ label }}
+
+	div(v-if="confirm")
+		modal(name="confirmModal", :modalClass="$css.confirmModal")
+			header {{ confirm }}
+			footer
+				btn(cs="silver", @click="$refs.confirmModal.close()") Abbrechen
+				btn(cs="primary", @click="confirmClick") Bestätigen

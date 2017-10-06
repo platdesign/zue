@@ -1,0 +1,22 @@
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+	Pug-Template for view.
+
+	@name			bootscreen
+	@project 	p17-0007-motion-screen
+	@author 	Christian Blaschke <mail@platdesign.de>
+	@since		September 13th 2017, 12:52:37 pm
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+.view--bootscreen
+	h1 Booting ...
+
+	section.tasks
+		li(v-for="task in tasks", :class="getTaskClasses(task)")
+			fa(name="cog", spin, v-if="task.status === 'running'")
+			fa(name="check-circle", v-if="task.status === 'done'")
+			fa(name="exclamation-circle", v-if="task.status === 'failed'")
+			span {{ task.label }}
+
+	section.error(v-if="error")
+		button(@click="retryBoot()") Retry

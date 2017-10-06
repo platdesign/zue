@@ -1,0 +1,12 @@
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+	Pug-Template for component
+
+	@name			btn-toggle
+	@project 	p17-0008-tribe-manager-app
+	@author 	Christian Blaschke <mail@platdesign.de>
+	@since		September 21st 2017, 12:41:06 am
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+div(:class="{ [$css.component]: true, [$css.active]:value }", @click.stop="$emit('input', !value)")
+	slot

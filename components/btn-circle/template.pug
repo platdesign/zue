@@ -1,0 +1,13 @@
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+	Pug-Template for component
+
+	@name			btn-circle
+	@project 	p17-0008-tribe-manager-app
+	@author 	Christian Blaschke <mail@platdesign.de>
+	@since		September 20th 2017, 1:08:19 pm
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+div(:class="$css.component", @click="e => $emit('click', e)")
+	div(:class="$css.content")
+		fa(v-if="icon", :name="icon")

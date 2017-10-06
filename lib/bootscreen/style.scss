@@ -1,0 +1,37 @@
+/**
+ * Styles for view component.
+ *
+ * @name 			bootscreen
+ * @project 	p17-0007-motion-screen
+ * @author 		Christian Blaschke <mail@platdesign.de>
+ * @since			September 13th 2017, 12:52:37 pm
+ */
+
+.view--bootscreen {
+	position: absolute;
+	left: 50%;
+	top: 30%;
+	transform: translateX(-50%);
+	width: 400px;
+	background: #eaeaea;
+	padding: 1em;
+	color:mix(blue, green);
+
+	.tasks {
+		> li {
+			list-style: none;
+
+			&.status {
+				&--done {
+					color:mix(yellow, green, 40%);
+				}
+				&--failed {
+					color: lighten(#aa0000, 15%);
+				}
+				&--running {
+
+				}
+			}
+		}
+	}
+}

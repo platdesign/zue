@@ -1,0 +1,19 @@
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+	Pug-Template for component
+
+	@name			list
+	@project 	p17-0008-tribe-manager-app
+	@author 	Christian Blaschke <mail@platdesign.de>
+	@since		September 20th 2017, 9:57:26 pm
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+viw(split="rows", :class="$css.component")
+	viw(collapse)
+
+	viw(scrollable, :class="$css.main")
+		template(v-for="(item, index) in _filteredData", @click="$emit('click-row', item)")
+			slot(name="item", v-bind="item", :$index="index", :item="item")
+
+	viw(collapse, :class="$css.footer") {{ _filteredData.length }} {{ footerItemLabel }}
+

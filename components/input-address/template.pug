@@ -1,0 +1,24 @@
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+	Pug-Template for component
+
+	@name			input-address
+	@project 	p17-0008-tribe-manager-app
+	@author 	Christian Blaschke <mail@platdesign.de>
+	@since		October 1st 2017, 9:36:44 pm
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+input-wrap(
+	:class="$css.component",
+	:label="label",
+	:help="help"
+)
+	template(slot="default", scope="scope")
+		z-address(
+			:street.sync="_street",
+			:zip.sync="_zip",
+			:city.sync="_city",
+			:country.sync="_country",
+			:state.sync="_state",
+			:readonly="!readonly",
+			:street-id="scope.id"
+		)

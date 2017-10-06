@@ -1,0 +1,140 @@
+html {
+	// https://developer.mozilla.org/de/docs/Web/CSS/touch-action
+	-ms-touch-action: manipulation;
+	touch-action: manipulation;
+}
+
+body {
+
+	--zue-scrollbar-size: 3px;
+
+	--zue-color-primary: #007a8c;
+	--zue-color-primary__font: mix(white, #007a8c, 75%);
+	--zue-color-primary__complement: #c8d419;
+	--zue-color-primary__complement_50: rgba(#c8d419, .5);
+	--zue-color-primary__10a: rgba(#007a8c, .1);
+	--zue-color-primary__20a: rgba(#007a8c, .2);
+
+	--zue-color-primary__10: mix(#007a8c, white, 10%);
+	--zue-color-primary__20: mix(#007a8c, white, 20%);
+
+	--zue-color-primary__70: rgba(#007a8c, .6);
+
+
+	--zue-color-danger: #d9534f;
+	--zue-color-danger__complement: #fff;
+
+	--zue-color-accent: #c8d419;
+	--zue-color-accent__complement: var(--zue-color-primary);
+
+
+	--zue-color-silver: #eaeaea;
+	--zue-color-silver-dark: #aaa;
+	--zue-color-silver-ultradark: #444;
+	--zue-color-silver-light: #efefef;
+
+
+	--zue-color-silver-ultralight: rgba(0,0,0,.15);
+
+
+	--zue-space__sm: .3em;
+	--zue-space__md: .5em;
+	--zue-space__lg: .7em;
+	--zue-space__xl: 1em;
+
+
+
+
+	-webkit-font-smoothing: antialiased;
+
+
+	// Remove Gray Highlight When Tapping Links in Mobile Safari
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+
+	// mobile touch scrolling in nested divs
+	-webkit-overflow-scrolling: touch;
+}
+
+
+
+::-webkit-scrollbar {
+	width: var(--zue-scrollbar-size);
+	height: 0px;
+}
+
+::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 var(--zue-scrollbar-size) var(--zue-color-primary);
+	background-color: var(--zue-color-primary);
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: var(--zue-color-primary__complement_50);
+}
+
+
+a {
+	color: var(--zue-color-primary);
+
+	&:focus {
+		outline: none;
+		text-decoration: underline;
+	}
+}
+
+
+
+.tr {
+	text-align: right;
+}
+
+
+.tc {
+	text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+.transition-fadeIn {
+
+	&-enter-active, &-leave-active {
+		transition: opacity .3s;
+	}
+
+	&-leave-to, &-enter {
+		opacity: 0;
+	}
+
+}
+
+
+
+
+
+
+.transition-fold {
+
+	&-enter-active, &-leave-active {
+		transition: max-height .3s ease;
+
+		height: auto;
+	}
+
+	&-leave-to, &-enter {
+		max-height: 0px !important;
+	}
+
+}
+
+
+
+
+
+

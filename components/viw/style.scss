@@ -1,0 +1,95 @@
+/**
+ * Styles for view component.
+ *
+ * @name 			view
+ * @project 	p17-0008-tribe-manager-app
+ * @author 		Christian Blaschke <mail@platdesign.de>
+ * @since			September 9th 2017, 3:38:30 pm
+ */
+
+@mixin create-space-row($val) {
+
+	&.spaced-#{$val} {
+		> .component {
+			+ .component {
+				margin-top: $val * .5em;
+			}
+		}
+	}
+
+}
+
+
+@mixin create-space-col($val) {
+
+	&.spaced-#{$val} {
+		> .component {
+			+ .component:not(:first-child) {
+				margin-left: $val * .5em;
+			}
+		}
+	}
+
+}
+
+.component {
+	flex: 1 1 auto;
+	//outline: 1px solid red;
+
+
+	> * {
+		flex: 1 1 auto;
+	}
+
+	.spaced-1 {
+		padding: 1 * .5em;
+	}
+
+	.spaced-3 {
+		padding: 3 * .5em;
+	}
+
+	.spaced-4 {
+		padding: 4 * .5em;
+	}
+
+	&.splitRows {
+		display: flex;
+		flex-direction: column;
+
+		@include create-space-row(0);
+		@include create-space-row(1);
+		@include create-space-row(2);
+		@include create-space-row(3);
+		@include create-space-row(4);
+		@include create-space-row(5);
+	}
+
+	&.splitCols {
+		display: flex;
+
+		@include create-space-col(0);
+		@include create-space-col(1);
+		@include create-space-col(2);
+		@include create-space-col(3);
+		@include create-space-col(4);
+		@include create-space-col(5);
+	}
+
+	&.collapse {
+		flex: 0 0 auto;
+	}
+
+	&.stretch {
+		flex: 1 1 auto;
+		min-width: 0;
+	}
+
+	&.scrollable {
+		overflow-x: auto!important;
+		overflow-y: auto!important;
+	}
+
+
+
+}

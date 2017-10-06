@@ -1,0 +1,48 @@
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+	Pug-Template for component
+
+	@name			array-editor
+	@project 	p17-0008-tribe-manager-app
+	@author 	Christian Blaschke <mail@platdesign.de>
+	@since		September 28th 2017, 7:40:08 pm
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+viw(split="rows", spaced="3", :class="$css.component")
+	viw(split="cols")
+		viw
+			ui-select(
+				has-search,
+				v-model="currentItem",
+				search-placeholder="Suchen",
+				:options="suggestions",
+				:loading="false",
+			)
+
+				template(slot="option", scope="item")
+					slot(name="item", :item="item.option", v-if="item.option")
+
+				template(slot="no-results")
+					span No results
+
+				template(slot="help")
+
+				template(slot="error")
+					h1 Error
+
+		viw(collapse, v-if="currentItem")
+			btn(icon="plus", @click="addCurrent")
+
+	viw(v-if="value")
+		viw(split="cols", v-for="(item, index) in value", :key="index")
+			viw
+				slot(name="item", :item="item")
+			viw(collapse)
+				//-btn(icon="trash", cs="danger", @click="$emit('remove', item)")
+				btn(
+					:confirm="confirmDelete",
+					cs="danger",
+					icon="trash-o",
+					@click="$emit('remove', item)",
+					:is-pending="pendingDelete"
+				)

@@ -1,0 +1,75 @@
+/**
+ * Styles for btn component.
+ *
+ * @name 			btn
+ * @project 	p17-0008-tribe-manager-app
+ * @author 		Christian Blaschke <mail@platdesign.de>
+ * @since			September 21st 2017, 7:35:05 pm
+ */
+
+.component {
+	flex: 1 1 auto;
+	display: flex;
+
+	> button {
+		border: none;
+		border-radius: 0;
+		flex: 1 1 auto;
+		padding: .8em 1.2em;
+		cursor: pointer;
+		white-space: nowrap;
+		outline: none;
+
+		&:active {
+			outline: none;
+			box-shadow: none;
+		}
+
+		.icon {
+			width: 1.5em;
+			height: 1.5em;
+		}
+
+		&.cs-primary {
+			background: var(--zue-color-primary);
+			color: var(--zue-color-primary__complement);
+		}
+
+		&.cs-accent {
+			background: var(--zue-color-accent);
+			color: var(--zue-color-accent__complement);
+		}
+
+		&.cs-danger {
+			background: var(--zue-color-danger);
+			color: var(--zue-color-danger__complement);
+		}
+
+		&.cs-silver {
+			background: var(--zue-color-silver);
+			color: var(--zue-color-silver-ultradark);
+		}
+
+		&.cs-transparent {
+			background: transparent;
+			color: var(--zue-color-primary);
+		}
+	}
+
+
+}
+
+
+.confirmModal {
+	> header {
+		text-align: center;
+		font-size: 1.3em;
+		margin-bottom: 1em;
+	}
+
+	> footer {
+		display: grid;
+		grid-gap: 1em;
+		grid-template-columns: 1fr 1fr;
+	}
+}

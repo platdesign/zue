@@ -1,0 +1,22 @@
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+	Pug-Template for component
+
+	@name			input-range-slider
+	@project 	p17-0008-tribe-manager-app
+	@author 	Christian Blaschke <mail@platdesign.de>
+	@since		September 26th 2017, 11:05:12 pm
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+
+input-wrap(
+	:class="$css.component",
+	:label="label",
+	:help="help"
+)
+	range-slider(
+		:range="range",
+		:step="step",
+		:model-min.sync="valMin",
+		:model-max.sync="valMax"
+	)

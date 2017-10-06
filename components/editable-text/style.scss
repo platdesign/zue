@@ -1,0 +1,34 @@
+/**
+ * Styles for editable-text component.
+ *
+ * @name 			editable-text
+ * @project 	p17-0008-tribe-manager-app
+ * @author 		Christian Blaschke <mail@platdesign.de>
+ * @since			September 28th 2017, 1:09:29 pm
+ */
+
+.component {
+
+	> input {
+		background: transparent;
+		border-radius: .3em;
+		border: 1px solid transparent;
+		transition: background .2s;
+		appearance: none;
+		&:hover {
+			outline: none;
+			background: var(--zue-color-primary__10);
+		}
+
+		&:focus {
+			outline: none;
+			border: 1px solid var(--zue-color-primary__10);
+			background: transparent;
+		}
+	}
+
+	> span, input {
+		padding: .2em .3em;
+		margin: 0 -.3em;
+	}
+}

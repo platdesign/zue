@@ -1,0 +1,77 @@
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+	Pug-Template for component
+
+	@name			input-text
+	@project 	p17-0008-tribe-manager-app
+	@author 	Christian Blaschke <mail@platdesign.de>
+	@since		September 25th 2017, 5:43:13 pm
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+input-wrap(
+	:class="$css.component",
+	:label="label",
+	:help="help"
+)
+	template(slot="help", v-if="$slots.help")
+		slot(name="help")
+
+	template(slot="default", scope="scope")
+		div(:class="$css.inputs")
+			input(
+				v-if="!multiline",
+
+				:type="type",
+				:value="value",
+				:required="required",
+				:autocomplete="autocomplete",
+				:disabled="disabled",
+				:readonly="readonly",
+				:placeholder="placeholder",
+				:name="name",
+				:id="scope.id",
+				:step="step",
+				:autofocus="autofocus",
+				@input="e => $emit('input', e.target.value)"
+			)
+
+			textarea(
+				v-if="multiline",
+				:value="value",
+				@input="e => $emit('input', e.target.value)",
+				:required="required",
+				:readonly="readonly",
+				:id="scope.id",
+				:autofocus="autofocus",
+				v-elastic=""
+			)
+
+
+
+
+//-div(:class="{ [$css.component]: true, [$css.mobile]: isMobile }")
+
+	label
+		div(:class="$css.help", v-if="help"): span {{ help }}
+		input(
+			type="text",
+			:value="value",
+			@input="e => $emit('input', e.target.value)",
+			v-if="!multiline",
+			:required="required",
+			:autocomplete="autocomplete",
+			:disabled="disabled",
+			:readonly="readonly",
+			:placeholder="placeholder",
+			:name="name"
+		)
+
+		textarea(
+			v-if="multiline",
+			:value="value",
+			@input="e => $emit('input', e.target.value)",
+			:required="required",
+			:style="{ height: multilineHeight+'px' }"
+		)
+
+		span {{ label }}

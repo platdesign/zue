@@ -1,0 +1,85 @@
+/**
+ * Styles for toolbar component.
+ *
+ * @name 			toolbar
+ * @project 	p17-0008-tribe-manager-app
+ * @author 		Christian Blaschke <mail@platdesign.de>
+ * @since			September 20th 2017, 12:39:29 pm
+ */
+
+.component {
+	background: #fff;
+	display: flex;
+	flex: 0 0 auto;
+	box-shadow: 0 0 .5em 0 rgba(black, .5);
+	z-index: 2;
+	flex-direction: column;
+
+	.toolbar {
+		flex: 1 1 auto;
+		display: flex;
+
+		.title {
+			flex: 0 0 auto;
+			font-size: 1.3em;
+			padding: .75em .5em .75em .75em;
+			color: var(--ci-color-primary);
+			cursor: pointer;
+			white-space: nowrap;
+
+			> svg {
+				height: 1em;
+				width: auto;
+				vertical-align: top;
+			}
+		}
+
+		> .nav {
+			flex: 1 1 auto;
+			justify-content: flex-end;
+			list-style: none;
+			display: flex;
+			align-items: center;
+			padding-right: .1em;
+			justify-content: flex-end;
+
+			> * {
+				margin: 0 .5em;
+			}
+
+			> li {
+				flex: 0 0 auto;
+			}
+		}
+
+
+	}
+
+
+	.navbar {
+		flex: 0 0 auto;
+		display: flex;
+		list-style: none;
+
+		> :global(.navbar-item) {
+			text-align: center;
+			padding: .7em 1em;
+			cursor: pointer;
+			user-select: none;
+			background: var(--zue-color-silver);
+			color: var(--zue-color-silver-dark);
+
+			white-space: nowrap;
+
+			&:not(:first-child) {
+				margin-left: 1px;
+			}
+
+			&:global(.router-link-active) {
+				background: var(--zue-color-accent);
+				color: var(--zue-color-accent__complement);
+			}
+		}
+	}
+
+}

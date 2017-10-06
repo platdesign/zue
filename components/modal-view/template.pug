@@ -1,0 +1,13 @@
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+	Pug-Template for component
+
+	@name			modal-view
+	@project 	p17-0008-tribe-manager-app
+	@author 	Christian Blaschke <mail@platdesign.de>
+	@since		October 5th 2017, 10:16:26 am
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+transition(name="transition-fadeIn")
+	div(:class="$css.component", v-if="visible", @click.self="close", tabindex="0", @keydown.esc.prevent="close")
+		div(:class="[ $css.modal, currentModal.modalClass ]")
+			slot(name="content")

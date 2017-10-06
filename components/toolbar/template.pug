@@ -1,0 +1,20 @@
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+	Pug-Template for component
+
+	@name			toolbar
+	@project 	p17-0008-tribe-manager-app
+	@author 	Christian Blaschke <mail@platdesign.de>
+	@since		September 20th 2017, 12:39:29 pm
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+viw(split="rows", :class="$css.component")
+	viw(split="cols", :class="$css.toolbar")
+		div(:class="$css.title", @click="$emit('click-title')")
+			fa(:name="icon", v-if="icon")
+			span {{ title }}
+		//-viw(:class="$css.spacer")
+		viw(:class="$css.nav")
+			slot(name="default")
+	viw(:class="$css.navbar")
+		slot(name="navbar")

@@ -1,0 +1,27 @@
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+	Pug-Template for component
+
+	@name			search
+	@project 	p17-0008-tribe-manager-app
+	@author 	Christian Blaschke <mail@platdesign.de>
+	@since		September 29th 2017, 8:49:14 am
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+viw(:class="{ [$css.component]:true, [$css.focus]: hasFocus || value }")
+	input(
+		type="text",
+		:value="value",
+		:placeholder="placeholder",
+		@input="e => updateValue(e.target.value)",
+		@keydown.esc.stop.prevent="resetValue",
+		@focus="hasFocus = true",
+		@blur="hasFocus = false"
+	)
+	button(
+		type="button",
+		@click="resetValue",
+		v-if="value",
+		:tabindex="-1"
+	)
+		fa(name="times-circle")

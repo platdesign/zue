@@ -1,0 +1,119 @@
+/**
+ * Styles for tabs component.
+ *
+ * @name 			tabs
+ * @project 	p17-0008-tribe-manager-app
+ * @author 		Christian Blaschke <mail@platdesign.de>
+ * @since			September 10th 2017, 12:22:22 pm
+ */
+
+.component {
+
+	$color: #eaeaea;
+	$fColor: var(--zue-color-accent__complement);
+	$focusColor: var(--zue-color-accent);
+	$arrowSize: 6px;
+	$arrowColor: $focusColor;
+
+	background: $color;
+	//border-radius: 3px;
+	//overflow: hidden;
+	flex: 1 1 auto;
+	display:flex;
+	flex-direction: column;
+
+	> header {
+		display: flex;
+		flex: 0 0 auto;
+		z-index: 10;
+
+		li {
+			flex: 1 1 auto;
+			list-style: none;
+			padding: 1em;
+			cursor: pointer;
+			user-select: none;
+			background: $color;
+			color: $fColor;
+			position: relative;
+			text-align: center;
+
+
+
+
+			&.active {
+				background: $focusColor;
+
+				&:after {
+					$size: $arrowSize;
+					content: '';
+					position: absolute;
+					z-index: 1;
+					transform: translateX(-50%);
+					left: 50%;
+					top: 100%;
+					width: 0;
+					height: 0;
+					border-left: $size solid transparent;
+  				border-right: $size solid transparent;
+					border-top: $size solid $arrowColor;
+				}
+			}
+		}
+	}
+
+	> main {
+		flex: 1 1 auto;
+		display: flex;
+		background: white;
+		position: relative;
+
+		&:after {
+			content: '';
+			position: absolute;
+			top: -1em;
+			left:0;
+			right: 0;
+			box-shadow: 0 0 .5em 0 rgba(black, .5);
+			height: 1em;
+			pointer-events: none;
+			z-index: 0;
+		}
+
+
+		//padding-top: $arrowSize*2;
+		//overflow: auto;
+	}
+
+
+	&.vertical {
+		display: flex;
+
+		> header {
+			flex-direction: column;
+
+			li {
+				&.active {
+
+					&:after {
+						$size: $arrowSize;
+						transform: translateY(-50%);
+						left: 100%;
+						top: 50%;
+						width: 0;
+						height: 0;
+						border-top: $size solid transparent;
+	  				border-bottom: $size solid transparent;
+						border-left: $size solid $arrowColor;
+					}
+				}
+			}
+		}
+
+		> main {
+			flex: 1 1 auto;
+			padding-top: 0;
+			padding-left: $arrowSize*2;
+		}
+	}
+}

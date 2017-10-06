@@ -1,0 +1,24 @@
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+	Pug-Template for component
+
+	@name			editable-text
+	@project 	p17-0008-tribe-manager-app
+	@author 	Christian Blaschke <mail@platdesign.de>
+	@since		September 28th 2017, 1:09:29 pm
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+div(:class="$css.component")
+	template(v-if="!readonly")
+		input(
+			v-model="model",
+			v-autowidth="{comfortZone: 0}",
+			:placeholder="placeholder",
+			:id="id"
+		)
+		//-button(v-if="editable", @click="editEnabled = false")
+			fa(name="check-circle")
+	template(v-else)
+		span {{ value }}
+		//-button(v-if="editable", @click="editEnabled = true")
+			fa(name="pencil-square-o")

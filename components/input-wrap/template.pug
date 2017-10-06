@@ -1,0 +1,22 @@
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+	Pug-Template for component
+
+	@name			input-wrap
+	@project 	p17-0008-tribe-manager-app
+	@author 	Christian Blaschke <mail@platdesign.de>
+	@since		September 26th 2017, 11:21:46 pm
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+div(:class="$css.component")
+
+	div
+		label(:class="$css.label", :for="labelId")
+			span {{ label }}
+
+		div(:class="$css.input")
+			slot(name="default", :id="labelId")
+
+		div(:class="$css.help", v-if="help || $slots.help")
+			slot(name="help")
+			span {{ help }}

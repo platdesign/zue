@@ -1,0 +1,22 @@
+/**
+ * Styles for foldable component.
+ *
+ * @name 			foldable
+ * @project 	p17-0008-tribe-manager-app
+ * @author 		Christian Blaschke <mail@platdesign.de>
+ * @since			October 5th 2017, 4:57:17 pm
+ */
+
+.component {
+
+	> header {
+		background: var(--zue-color-silver-light);
+		font-size: 1.4em;
+		padding: var(--zue-space__md);
+		color: var(--zue-color-primary);
+	}
+
+	> main {
+		overflow: hidden;
+	}
+}
