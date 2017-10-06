@@ -12,10 +12,21 @@
 
 const context = require.context('../../components', true, /^\.\/[A-Za-z-]*\/index\.*$/);
 const components = context.keys().map(key => context(key).default);
+import ComponentView from './component-view';
+
 
 export default {
 
 	name: 'app',
+
+	routes: [
+		{
+			path: ':componentName',
+			name: 'component',
+			props: true,
+			component: ComponentView
+		}
+	],
 
 	data() {
 		return {

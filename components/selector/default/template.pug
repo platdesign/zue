@@ -13,10 +13,21 @@
 
 	br
 	br
-	hr
+	selector(v-model="model", :options="options", :searchable="true")
+
 	br
 	br
 
 	selector(v-model="model", :options="options")
+		template(slot="option", scope="scope")
+			b {{ scope.option }}
+
+	br
+
+	selector(
+		v-model="model",
+		:options="options",
+		:searchable="true"
+	)
 		template(slot="option", scope="scope")
 			b {{ scope.option }}

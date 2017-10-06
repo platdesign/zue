@@ -21,7 +21,7 @@ export default {
 	data() {
 		return {
 			model: null,
-			options: ['Peter', 'Bob', 'Andrew']
+			options: ['Peter', 'Bob', 'Andrew', 'Marc', 'Hans', 'Ray']
 		}
 	}
 

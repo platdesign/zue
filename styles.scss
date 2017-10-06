@@ -32,9 +32,7 @@ body {
 	--zue-color-silver-dark: #aaa;
 	--zue-color-silver-ultradark: #444;
 	--zue-color-silver-light: #efefef;
-
-
-	--zue-color-silver-ultralight: rgba(0,0,0,.15);
+	--zue-color-silver-ultralight: lighten(#efefef, 3%);
 
 
 	--zue-space__sm: .3em;

@@ -8,21 +8,43 @@
 //- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
-div(:class="$css.component", v-click-outside="clickOutside")
-	div(:class="$css.value", @click="isOpen = !isOpen")
+div(
+	:class="$css.component",
+	v-click-outside="clickOutside",
+	tabindex="1",
+	@keydown.self.down.prevent.stop="selectNext",
+	@keydown.self.up.prevent.stop="selectPrev",
+	@keydown.esc.stop.prevent="isOpen = false",
+	@keydown.enter.stop.prevent="selectCurrentFocusElement"
+)
+	div(:class="{ [$css.value]:true, [$css.slotted]:$scopedSlots.option }", @click="isOpen = !isOpen")
 		div(v-if="$scopedSlots.option")
 			slot(name="option", :option="value")
 		div(v-else)
 			span {{ value }}
 
 
-	div(:class="$css.options", v-if="isOpen")
-		template(v-for="option in options")
-			div(:class="$css.option", @click="() => select(option)")
-				template(v-if="$scopedSlots.option")
-					slot(name="option", :option="option")
+	viw(
+		:class="$css.popup",
+		v-if="isOpen",
+		split="rows"
+	)
+		viw(collapse, :class="$css.search", v-if="searchable")
+			search(v-model="searchQuery", @blur="focusSelf", @keydown.prevent="true")
 
-				template(v-else)
-					span {{ option }}
+		viw(scrollable, :class="$css.options")
+			div(v-if="!filteredOptions.length", :class="$css.noResult")
+				span No result
 
+			template(v-else, v-for="(option, index) in filteredOptions")
+				div(
+					:class="{ [$css.option]:true, [$css.slotted]:$scopedSlots.option, [$css.focus]: index === optionFocusIndex }",
+					@click="() => select(option)",
+					:tabindex="index+1",
+					:focus="index === optionFocusIndex"
+				)
+					template(v-if="$scopedSlots.option")
+						slot(name="option", :option="option")
 
+					template(v-else)
+						span {{ option }}

@@ -23,10 +23,9 @@ export default {
 		resetValue() {
 			if(!this.value) {
 				this.$el.children[0].blur();
+				this.$emit('blur');
 			}
 			this.$emit('input', '');
-
-
 		},
 		updateValue(val) {
 			this.$emit('input', val);

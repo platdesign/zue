@@ -1,0 +1,18 @@
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+	Pug-Template for view.
+
+	@name			component-view
+	@project 	zue
+	@author 	Christian Blaschke <mail@platdesign.de>
+	@since		October 6th 2017, 8:17:45 pm
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+.view--component-view(v-if="activeComponent")
+	h1 {{ activeComponent.name }}
+	section.example(v-for="example in activeComponent.examples")
+		header
+			span {{ example.name }}
+		main
+			component(:is="example")
+

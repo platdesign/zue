@@ -10,15 +10,18 @@
 
 .view--app
 	aside
-		li(
+		router-link(
+			tag="li",
 			v-for="comp in components",
-			@click="activeComponent = comp",
-			:class="{ active: activeComponent === comp }"
-		) {{ comp.name }}
+			:to="{ name: 'component', params: { componentName: comp.name, activeComponent: comp }}",
+			:key="comp.name"
+		)
+			span {{ comp.name }}
 
 
 	main
-		template(v-if="activeComponent")
+		router-view
+		//-template(v-if="activeComponent")
 			h1 {{ activeComponent.name }}
 			section.example(v-for="example in activeComponent.examples")
 				header
