@@ -4,28 +4,47 @@ html {
 	touch-action: manipulation;
 }
 
+
+@mixin zue_createColorVars($name, $color, $complement) {
+
+	// basic color
+	--zue-color-#{$name}: $color;
+
+	--zue-color-#{$name}__complement: $complement;
+
+
+	// mixes with white
+	@for $i from 1 through 9 {
+		--zue-color-#{$name}__#{$i*10}: mix($color, white, percentage($i/10));
+		--zue-color-#{$name}__w#{$i*10}: mix($color, white, percentage($i/10));
+		--zue-color-#{$name}__b#{$i*10}: mix($color, black, percentage($i/10));
+
+		--zue-color-#{$name}__complement__#{$i*10}: mix($complement, white, percentage($i/10));
+		--zue-color-#{$name}__complement__w#{$i*10}: mix($complement, white, percentage($i/10));
+		--zue-color-#{$name}__complement__b#{$i*10}: mix($complement, black, percentage($i/10));
+	}
+
+	// alpha vars
+	@for $i from 1 through 9 {
+		--zue-color-#{$name}__#{$i*10}a: rgba($color, $i/10);
+
+		--zue-color-#{$name}__complement_#{$i*10}a: rgba($complement, $i/10);
+	}
+
+
+}
+
 body {
 
 	--zue-scrollbar-size: 3px;
 
-	--zue-color-primary: #007a8c;
 	--zue-color-primary__font: mix(white, #007a8c, 75%);
-	--zue-color-primary__complement: #c8d419;
-	--zue-color-primary__complement_50: rgba(#c8d419, .5);
-	--zue-color-primary__10a: rgba(#007a8c, .1);
-	--zue-color-primary__20a: rgba(#007a8c, .2);
-
-	--zue-color-primary__10: mix(#007a8c, white, 10%);
-	--zue-color-primary__20: mix(#007a8c, white, 20%);
-
-	--zue-color-primary__70: rgba(#007a8c, .6);
 
 
-	--zue-color-danger: #d9534f;
-	--zue-color-danger__complement: #fff;
-
-	--zue-color-accent: #c8d419;
-	--zue-color-accent__complement: var(--zue-color-primary);
+	@include zue_createColorVars('primary', #007a8c, #c8d419);
+	@include zue_createColorVars('accent', #c8d419, #007a8c);
+	@include zue_createColorVars('danger', #d9534f, white);
+	@include zue_createColorVars('silver', #eaeaea, black);
 
 
 	--zue-color-silver: #eaeaea;
@@ -66,7 +85,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-	background-color: var(--zue-color-primary__complement_50);
+	background-color: var(--zue-color-accent);
 }
 
 

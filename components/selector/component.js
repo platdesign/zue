@@ -87,7 +87,7 @@ export default {
 			let els = this.$el.querySelectorAll(`.${this.$css.option}`);
 			let el = els[this.optionFocusIndex];
 			if(el) {
-				el.scrollIntoView();
+				//el.scrollIntoView();
 			}
 		},
 

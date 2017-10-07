@@ -1,0 +1,21 @@
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+	Pug-Template for component
+
+	@name			switch
+	@project 	zue
+	@author 	Christian Blaschke <mail@platdesign.de>
+	@since		October 7th 2017, 10:11:20 am
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+div(:id="id", tabindex="0", :class="{ [$css.component]: true, [$css.active]: active, [_cs]: true, [$css.disabled]: disabled, [$css.mobile]: isMobile, }", @click="toggle")
+	div(:class="$css.handle")
+
+	modal(v-if="confirm", name="confirmModal", :modalClass="$css.confirmModal")
+		header
+			span Bitte bestätigen
+		main
+			span {{ confirm }}
+		footer
+			btn(@click="$refs.confirmModal.close()", label="Nein", cs="primary")
+			btn(@click="confirmChange", label="Ja", cs="danger")

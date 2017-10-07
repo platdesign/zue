@@ -25,7 +25,7 @@
 		flex: 1 1 auto;
 		cursor: pointer;
 		background: var(--zue-color-silver-light);
-		min-height: 1em;
+		height: 2.2em;
 		user-select: none;
 		padding: var(--zue-space__md);
 
@@ -50,6 +50,8 @@
 				user-select: none;
 				padding: var(--zue-space__md);
 
+
+
 				&:hover {
 					background: rgba(black, .05);
 				}
@@ -58,7 +60,8 @@
 					padding:0;
 				}
 
-				&.focus {
+				&:focus, &.focus {
+					outline: none;
 					background:var(--zue-color-primary__20);
 				}
 			}

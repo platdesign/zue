@@ -21,6 +21,9 @@ export default {
 		this.$root.$refs.modalView = this;
 	},
 
+	destroyed() {
+		delete this.$root.$refs.modalView;
+	},
 
 
 	data() {
@@ -34,7 +37,9 @@ export default {
 	methods: {
 
 		close() {
-			this.currentModal.close();
+			if(this.currentModal) {
+				this.currentModal.close();
+			}
 		},
 
 		openModal(modal) {

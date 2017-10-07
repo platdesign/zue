@@ -1,15 +1,15 @@
 <!--
-	[Component Description]
+	[View Description]
 
-	@name 			modal
-	@project 		p17-0008-tribe-manager-app
+	@name 			examples
+	@project 		zue
 	@author 		Christian Blaschke <mail@platdesign.de>
-	@since			October 5th 2017, 10:21:05 am
-	@type 			Component
+	@since			October 7th 2017, 10:12:23 am
+	@type 			View
 	@class			VueComponent
 	@summary 		[Short description]
 -->
 
 <template src="./template.pug" lang="pug"></template>
 <script src="./component.js"></script>
-<style src="./style.scss" lang="scss" module="$css"></style>
+<style src="./style.scss" lang="scss" scoped></style>

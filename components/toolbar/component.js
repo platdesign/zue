@@ -8,10 +8,15 @@
  */
 
 
+import Navbar from '../navbar';
 
 export default {
 
 	name: 'toolbar',
+
+	components: {
+		Navbar
+	},
 
 	props: {
 		title: {

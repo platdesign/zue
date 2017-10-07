@@ -22,7 +22,8 @@ export default {
 
 	data() {
 		return {
-			tabs: []
+			tabs: [],
+			activeTab: null
 		}
 	},
 
@@ -30,22 +31,35 @@ export default {
 		let first = this.tabs[0];
 
 		if(first) {
-			first.isVisible = true;
+			this.activateTab(first);
 		}
 	},
 
 	methods: {
 		registerTab(tabVm) {
-			this.tabs.push(tabVm);
+			let existing = this.tabs.find(t => t.label === tabVm.label);
+
+			if(!existing) {
+				this.tabs.push(tabVm);
+			} else {
+				let index = this.tabs.indexOf(existing);
+
+				if(index > -1) {
+					this.tabs[index] = tabVm;
+
+					if(this.activeTab === existing) {
+						this.activateTab(tabVm);
+					}
+				}
+			}
 		},
 
 		activateTab(tabVm) {
-			this.tabs.forEach(t => t.isVisible = false);
-			tabVm.isVisible = true;
+			this.activeTab = tabVm;
 		},
 
 		isTabActive(tabVm) {
-			return tabVm.isVisible;
+			return tabVm === this.activeTab;
 		}
 	}
 

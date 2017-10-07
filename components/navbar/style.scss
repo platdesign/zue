@@ -1,0 +1,115 @@
+/**
+ * Styles for navbar component.
+ *
+ * @name 			navbar
+ * @project 	zue
+ * @author 		Christian Blaschke <mail@platdesign.de>
+ * @since			October 7th 2017, 3:22:41 pm
+ */
+
+.component {
+	display: flex;
+
+	> li {
+		list-style: none;
+		flex: 1 1 auto;
+		text-align: center;
+		cursor: pointer;
+		user-select: none;
+		padding: 0 .75em;
+		transition: background .3s;
+		line-height: 1.6;
+	}
+
+
+
+
+	&.cs-primary {
+		--cs-color-bg: var(--zue-color-primary__w30);
+		--cs-color-bg__active: var(--zue-color-primary__w80);
+
+		--cs-color-font: var(--zue-color-primary);
+		--cs-color-font__active: var(--zue-color-primary__w10);
+
+	}
+
+	&.cs-accent {
+		--cs-color-bg: var(--zue-color-accent__w40);
+		--cs-color-bg__active: var(--zue-color-accent);
+
+		--cs-color-font: var(--zue-color-accent__b70);
+		--cs-color-font__active: var(--zue-color-accent__b50);
+
+	}
+
+
+	&.cs-danger {
+		--cs-color-bg: var(--zue-color-danger__w90);
+		--cs-color-bg__active: var(--zue-color-danger);
+
+		--cs-color-font: var(--zue-color-danger__complement);
+		--cs-color-font__active: var(--zue-color-danger__complement);
+	}
+
+
+
+	&.kind-default {
+
+
+		> li {
+			$border-radius: 3px;
+			color: var(--cs-color-font);
+			background: var(--cs-color-bg);
+
+			&:not(:first-child) {
+				//border-left: 1px solid var(--cs-color-bg__active);
+				margin-left: 1px;
+			}
+
+			&:first-child {
+				border-radius: $border-radius 0 0 $border-radius;
+			}
+
+			&:last-child {
+				border-radius: 0 $border-radius $border-radius 0;
+			}
+
+
+			&:global(.active) {
+				background: var(--cs-color-bg__active);
+				color: var(--cs-color-font__active);
+			}
+		}
+	}
+
+
+	&.kind-outlines {
+
+		> li {
+			$border-radius: 3px;
+			color: var(--cs-color-bg__active);
+			border: 1px solid var(--cs-color-bg__active);
+			border-left: none;
+
+			&:first-child {
+				border-left: 1px solid var(--cs-color-bg__active);
+			}
+
+			&:first-child {
+				border-radius: $border-radius 0 0 $border-radius;
+			}
+
+			&:last-child {
+				border-radius: 0 $border-radius $border-radius 0;
+			}
+
+			&:global(.active) {
+				background: var(--cs-color-bg__active);
+				color: var(--cs-color-font__active);
+			}
+		}
+	}
+
+
+
+}

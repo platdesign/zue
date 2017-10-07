@@ -60,6 +60,7 @@
 		flex: 0 0 auto;
 		display: flex;
 		list-style: none;
+		padding: 0 var(--zue-space__xl) var(--zue-space__xl) var(--zue-space__xl);
 
 		> :global(.navbar-item) {
 			text-align: center;

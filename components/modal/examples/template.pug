@@ -1,0 +1,22 @@
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+	Pug-Template for view.
+
+	@name			examples
+	@project 	zue
+	@author 	Christian Blaschke <mail@platdesign.de>
+	@since		October 7th 2017, 10:52:37 am
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+.view--examples
+
+
+
+	btn(label="Open", @click="$refs.a.open()")
+	modal(name="a")
+		h1 Hello
+
+
+	btn(label="Open", @click="$refs.b.open()")
+	modal(name="b")
+		h1 asd

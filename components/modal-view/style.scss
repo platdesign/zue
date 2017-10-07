@@ -23,11 +23,30 @@
 		top: 20%;
 		transform: translate(-50%, 0);
 		background: #fff;
-		padding: 1em;
 		border-radius: 3px;
+		overflow: hidden;
 
 		width: 90%;
 		max-width: 600px;
+
+
+
+		> header {
+			background: var(--zue-color-accent);
+			padding: var(--zue-space__xl) var(--zue-space__md);
+			color: var(--zue-color-accent__complement);
+			font-size: 1.3em;
+			text-align: center;
+		}
+
+		> main {
+			padding: var(--zue-space__xl) var(--zue-space__md);
+			font-size: 1.1em;
+		}
+
+		> footer {
+			padding: var(--zue-space__md);
+		}
 	}
 
 }

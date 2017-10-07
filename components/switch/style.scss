@@ -1,0 +1,90 @@
+/**
+ * Styles for switch component.
+ *
+ * @name 			switch
+ * @project 	zue
+ * @author 		Christian Blaschke <mail@platdesign.de>
+ * @since			October 7th 2017, 10:11:20 am
+ */
+
+.component {
+	--size: 3em;
+
+	&.mobile {
+		--size: 3.5em;
+	}
+
+	cursor: pointer;
+	width: var(--size);
+	user-select: none;
+	border-radius: calc(var(--size)/2);
+	overflow: hidden;
+	display: inline-block;
+	vertical-align: middle;
+
+	&:focus {
+		outline: none;
+	}
+
+	.handle {
+		width: calc(var(--size)/1.7);
+		height: calc(var(--size)/1.7);
+		border-radius: calc(var(--size)/2);
+		transition: transform .2s, background .2s;
+		background: var(--zue-color-silver-dark);
+	}
+
+	&.cs-primary {
+		background: var(--zue-color-silver-light);
+
+		&.active {
+			.handle {
+				background: var(--zue-color-primary);
+			}
+		}
+	}
+
+	&.cs-accent {
+		background: var(--zue-color-silver-light);
+
+		&.active {
+			.handle {
+				background: var(--zue-color-accent);
+			}
+		}
+	}
+
+	&.cs-danger {
+		background: var(--zue-color-silver-light);
+
+		&.active {
+			.handle {
+				background: var(--zue-color-danger);
+			}
+		}
+	}
+
+	&.active {
+		.handle {
+			transform: translateX(calc(var(--size) - var(--size)/1.7));
+		}
+	}
+
+	&.disabled {
+		opacity: .5;
+		cursor: not-allowed;
+	}
+}
+
+
+
+.confirmModal {
+
+	footer {
+		margin-top: var(--zue-space__xl);
+		display: flex;
+		> *:not(:first-child) {
+			margin-left: var(--zue-space__md);
+		}
+	}
+}

@@ -1,12 +1,12 @@
 //- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 	Pug-Template for component
 
-	@name			modal
-	@project 	p17-0008-tribe-manager-app
+	@name			navbar
+	@project 	zue
 	@author 	Christian Blaschke <mail@platdesign.de>
-	@since		October 5th 2017, 10:21:05 am
+	@since		October 7th 2017, 3:22:41 pm
 //- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
-div(:class="$css.component")
+div(:class="[$css.component, $css[`cs-${cs}`], $css[`kind-${kind}`]]")
 	slot

@@ -1,0 +1,43 @@
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+	Pug-Template for view.
+
+	@name			examples
+	@project 	zue
+	@author 	Christian Blaschke <mail@platdesign.de>
+	@since		October 7th 2017, 10:12:23 am
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+.view--examples
+	p Default
+	z-switch(v-model="switchA")
+
+
+	p ColorScheme: primary
+	z-switch(v-model="switchB", cs="primary")
+
+	p ColorScheme: accent
+	z-switch(v-model="switchC", cs="accent")
+
+
+	p ColorScheme: danger
+	z-switch(v-model="switchD", cs="danger")
+
+	p Disabled
+	z-switch(v-model="switchE", cs="danger", :disabled="true")
+
+	p Array: {{ array }}
+	z-switch(v-model="array", value="Bob")
+	z-switch(v-model="array", value="Hans")
+	z-switch(v-model="array", value="Peter")
+	z-switch(v-model="array", value="Bob")
+
+
+	p Confirm change
+	z-switch(v-model="switchF", confirm="Wirklich?")
+
+	p Confirm Array: {{ array }}
+	z-switch(v-model="array", value="Bob", confirm="Really?")
+	z-switch(v-model="array", value="Hans", confirm="Really?")
+	z-switch(v-model="array", value="Peter", confirm="Really?")
+	z-switch(v-model="array", value="Bob", confirm="Really?")

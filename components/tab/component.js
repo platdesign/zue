@@ -18,14 +18,25 @@ export default {
 		icon: String
 	},
 
-	data() {
-		return {
-			isVisible: false
+	computed: {
+		_parent() {
+			let parent = this.$parent;
+
+			while(!parent.registerTab) {
+				parent = parent.$parent;
+			}
+
+			return parent;
+		},
+
+
+		isVisible() {
+			return this._parent.isTabActive(this);
 		}
 	},
 
-	mounted() {
-		this.$parent.registerTab(this);
+	created() {
+		this._parent.registerTab(this);
 	}
 
 }

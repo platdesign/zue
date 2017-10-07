@@ -1,0 +1,24 @@
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+	Pug-Template for view.
+
+	@name			examples
+	@project 	zue
+	@author 	Christian Blaschke <mail@platdesign.de>
+	@since		October 7th 2017, 3:23:21 pm
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+.view--examples
+
+
+	template(v-for="kind in ['default', 'outlines']")
+		template(v-for="cs in ['primary', 'accent', 'danger']")
+
+			p Kind: {{ kind }} / CS: {{ cs }}
+			navbar(:cs="cs", :kind="kind")
+				li(@click="activeA = 1", :class="{ active: activeA === 1 }") Nav 1
+				li(@click="activeA = 2", :class="{ active: activeA === 2 }") Nav 2
+				li(@click="activeA = 3", :class="{ active: activeA === 3 }") Nav 3
+				li(@click="activeA = 4", :class="{ active: activeA === 4 }") Nav 4
+				li(@click="activeA = 5", :class="{ active: activeA === 5 }") Nav 5
+

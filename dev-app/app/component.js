@@ -14,10 +14,15 @@ const context = require.context('../../components', true, /^\.\/[A-Za-z-]*\/inde
 const components = context.keys().map(key => context(key).default);
 import ComponentView from './component-view';
 
+import ModalView from '../../components/modal-view';
 
 export default {
 
 	name: 'app',
+
+	components: {
+		ModalView
+	},
 
 	routes: [
 		{

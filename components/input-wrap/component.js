@@ -24,7 +24,7 @@ export default {
 
 	data() {
 		return {
-			labelId: `id-${Date.now()}`
+			labelId: `id-${Date.now()}-${Math.random()*100000}`
 		}
 	}
 

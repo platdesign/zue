@@ -18,9 +18,9 @@ div(
 	@keydown.enter.stop.prevent="selectCurrentFocusElement"
 )
 	div(:class="{ [$css.value]:true, [$css.slotted]:$scopedSlots.option }", @click="isOpen = !isOpen")
-		div(v-if="$scopedSlots.option")
+		template(v-if="$scopedSlots.option")
 			slot(name="option", :option="value")
-		div(v-else)
+		template(v-else)
 			span {{ value }}
 
 
