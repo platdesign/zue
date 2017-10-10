@@ -1,0 +1,18 @@
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+	Pug-Template for component
+
+	@name			checkbox
+	@project 	zue
+	@author 	Christian Blaschke <mail@platdesign.de>
+	@since		October 10th 2017, 12:19:47 pm
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+div(
+	:class="{ [$css.component]: true, [$css.active]: isActive, [$css[`cs-${cs}`]]:true }",
+	@click="toggle",
+	:style="{ '--size': size }",
+	:id="id"
+)
+	fa(name="check", :class="$css.icon")
+

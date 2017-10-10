@@ -19,3 +19,6 @@ viw(split="rows", :class="$css.component")
 	viw(:class="$css.navbar", v-if="$slots.navbar")
 		navbar(kind="outlines")
 			slot(name="navbar")
+
+	viw(:class="$css.bar", v-if="$slots.bar")
+		slot(name="bar")

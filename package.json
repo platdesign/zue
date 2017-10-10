@@ -12,6 +12,7 @@
   "dependencies": {
     "autosize": "^4.0.0",
     "fuzzysearch": "^1.0.3",
+    "is": "^3.2.1",
     "mongo-parse": "^2.0.3",
     "rx": "^4.1.0",
     "vue": "^2.4.4",

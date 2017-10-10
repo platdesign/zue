@@ -1,0 +1,34 @@
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+	Pug-Template for view.
+
+	@name			examples
+	@project 	zue
+	@author 	Christian Blaschke <mail@platdesign.de>
+	@since		October 10th 2017, 12:20:08 pm
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+.view--examples
+
+	p Simple boolean model: {{ modelA }}
+	checkbox(v-model="modelA")
+
+
+	p Array model with given value: {{ modelB }}
+	checkbox(v-model="modelB", value="a")
+	checkbox(v-model="modelB", value="b")
+	checkbox(v-model="modelB", value="c")
+
+	p Object model with boolean values: {{ modelC }}
+	checkbox(v-model="modelC", value="a")
+	checkbox(v-model="modelC", value="b")
+	checkbox(v-model="modelC", value="c")
+
+	p CS: accent
+	checkbox(v-model="modelD", cs="accent")
+
+	p CS: danger
+	checkbox(v-model="modelD", cs="danger")
+
+	p Size: 2em
+	checkbox(v-model="modelD", size="2em")

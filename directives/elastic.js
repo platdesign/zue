@@ -8,7 +8,7 @@ export default function(Vue, options) {
 
 	Vue.directive('elastic', {
 		bind: function(el, binding, vNode) {
-			autosize(el);
+			Vue.nextTick(() => autosize(el));
 		},
 
 		unbind: function(el, binding) {

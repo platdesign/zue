@@ -18,15 +18,15 @@
 		user-select: none;
 		padding: 0 .75em;
 		transition: background .3s;
-		line-height: 1.6;
+		line-height: 1.8;
 	}
 
 
 
 
 	&.cs-primary {
-		--cs-color-bg: var(--zue-color-primary__w30);
-		--cs-color-bg__active: var(--zue-color-primary__w80);
+		--cs-color-bg: var(--zue-color-silver-light);
+		--cs-color-bg__active: var(--zue-color-primary);
 
 		--cs-color-font: var(--zue-color-primary);
 		--cs-color-font__active: var(--zue-color-primary__w10);
@@ -34,20 +34,20 @@
 	}
 
 	&.cs-accent {
-		--cs-color-bg: var(--zue-color-accent__w40);
+		--cs-color-bg: var(--zue-color-silver-light);
+
 		--cs-color-bg__active: var(--zue-color-accent);
 
-		--cs-color-font: var(--zue-color-accent__b70);
-		--cs-color-font__active: var(--zue-color-accent__b50);
-
+		--cs-color-font: var(--zue-color-silver__b60);
+		--cs-color-font__active: white;
 	}
 
 
 	&.cs-danger {
-		--cs-color-bg: var(--zue-color-danger__w90);
+		--cs-color-bg: var(--zue-color-silver-light);
 		--cs-color-bg__active: var(--zue-color-danger);
 
-		--cs-color-font: var(--zue-color-danger__complement);
+		--cs-color-font: var(--zue-color-danger);
 		--cs-color-font__active: var(--zue-color-danger__complement);
 	}
 
@@ -111,5 +111,10 @@
 	}
 
 
+	&.disabled {
+		> li {
+			cursor: not-allowed;
+		}
+	}
 
 }

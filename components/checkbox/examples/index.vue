@@ -1,16 +1,15 @@
 <!--
-	[Component Description]
+	[View Description]
 
-	@name 			toolbar
-	@project 		p17-0008-tribe-manager-app
+	@name 			examples
+	@project 		zue
 	@author 		Christian Blaschke <mail@platdesign.de>
-	@since			September 20th 2017, 12:39:29 pm
-	@type 			Component
+	@since			October 10th 2017, 12:20:08 pm
+	@type 			View
 	@class			VueComponent
 	@summary 		[Short description]
 -->
 
 <template src="./template.pug" lang="pug"></template>
 <script src="./component.js"></script>
-<style src="./style.scss" lang="scss" module="$css"></style>
-
+<style src="./style.scss" lang="scss" scoped></style>

@@ -1,0 +1,17 @@
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+	Pug-Template for component
+
+	@name			radiobar
+	@project 	zue
+	@author 	Christian Blaschke <mail@platdesign.de>
+	@since		October 10th 2017, 10:47:03 am
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+navbar(:class="$css.component", :cs="cs", :kind="kind", :disabled="readable")
+	li(v-for="item in items", @click="selectItem(item)", :class="{ active: item.value === value }")
+		template(v-if="$slots[item.slotName]")
+			slot(:name="item.slotName")
+		template(v-else)
+			span {{ item.label || item.key }}
+

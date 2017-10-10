@@ -1,0 +1,14 @@
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+	Pug-Template for view.
+
+	@name			examples
+	@project 	zue
+	@author 	Christian Blaschke <mail@platdesign.de>
+	@since		October 10th 2017, 9:05:59 am
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+.view--examples
+	checkbar(v-model="stateObj", :labels="{ a: 'Check A', b: 'Check B', c: 'Check C', d: 'Check D' }")
+		template(slot="item-a")
+			span HUHUHHU

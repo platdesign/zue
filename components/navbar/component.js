@@ -22,6 +22,23 @@ export default {
 		kind: {
 			type: String,
 			default: 'default'
+		},
+
+		disabled: {
+			type: Boolean,
+			default: false
+		}
+	},
+
+
+	computed: {
+		classes() {
+			return {
+				[this.$css.component]: true,
+				[this.$css[`cs-${this.cs}`]]: true,
+				[this.$css[`kind-${this.kind}`]]: true,
+				[this.$css.disabled]: this.disabled
+			};
 		}
 	}
 

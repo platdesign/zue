@@ -1,12 +1,12 @@
 //- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-	Pug-Template for component
+	Pug-Template for view.
 
-	@name			navbar
+	@name			examples
 	@project 	zue
 	@author 	Christian Blaschke <mail@platdesign.de>
-	@since		October 7th 2017, 3:22:41 pm
+	@since		October 10th 2017, 10:47:21 am
 //- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
-div(:class="classes")
-	slot
+.view--examples
+	radiobar(v-model="modelA", :options="{ 1: 'One', 2: 'Two', 3: 'Three' }")

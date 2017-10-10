@@ -1,0 +1,17 @@
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+	Pug-Template for component
+
+	@name			checkbar
+	@project 	zue
+	@author 	Christian Blaschke <mail@platdesign.de>
+	@since		October 10th 2017, 9:05:09 am
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+
+navbar(:class="$css.component", :cs="cs", :kind="kind")
+	li(v-for="item in items", @click="toggleItem(item)", :class="{ active: item.value === true }")
+		template(v-if="$slots[item.slotName]")
+			slot(:name="item.slotName")
+		template(v-else)
+			span {{ item.label || item.key }}

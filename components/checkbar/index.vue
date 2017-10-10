@@ -1,10 +1,10 @@
 <!--
 	[Component Description]
 
-	@name 			toolbar
-	@project 		p17-0008-tribe-manager-app
+	@name 			checkbar
+	@project 		zue
 	@author 		Christian Blaschke <mail@platdesign.de>
-	@since			September 20th 2017, 12:39:29 pm
+	@since			October 10th 2017, 9:05:09 am
 	@type 			Component
 	@class			VueComponent
 	@summary 		[Short description]
@@ -14,3 +14,5 @@
 <script src="./component.js"></script>
 <style src="./style.scss" lang="scss" module="$css"></style>
 
+
+<example src="./examples"></example>

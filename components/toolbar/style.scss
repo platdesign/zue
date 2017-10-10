@@ -60,7 +60,7 @@
 		flex: 0 0 auto;
 		display: flex;
 		list-style: none;
-		padding: 0 var(--zue-space__xl) var(--zue-space__xl) var(--zue-space__xl);
+		padding: 0 var(--zue-space__md) var(--zue-space__md) var(--zue-space__md);
 
 		> :global(.navbar-item) {
 			text-align: center;
@@ -81,6 +81,10 @@
 				color: var(--zue-color-accent__complement);
 			}
 		}
+	}
+
+	.bar {
+		padding: 0 var(--zue-space__md) var(--zue-space__md) var(--zue-space__md);
 	}
 
 }
