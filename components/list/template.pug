@@ -12,8 +12,9 @@ viw(split="rows", :class="$css.component")
 	viw(collapse)
 
 	viw(scrollable, :class="$css.main")
-		template(v-for="(item, index) in _filteredData", @click="$emit('click-row', item)")
-			slot(name="item", v-bind="item", :$index="index", :item="item")
+		div(:class="$css.items")
+			template(v-for="(item, index) in _filteredData", @click="$emit('click-row', item)")
+				slot(name="item", v-bind="item", :$index="index", :item="item")
 
 	viw(collapse, :class="$css.footer") {{ _filteredData.length }} {{ footerItemLabel }}
 

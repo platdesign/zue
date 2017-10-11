@@ -13,9 +13,9 @@
 	display: flex;
 	flex: 1 1 auto;
 
-	flex: 0 0 auto;
+	flex: .2 .2 auto;
 	&.focus {
-		flex: .5 .5 auto!important;
+		flex: .75 .75 auto!important;
 	}
 
 	transition: flex .4s;

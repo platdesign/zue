@@ -104,9 +104,10 @@ export default {
 				if(a[key] > b[key]) return 1;
 				return 0;
 			}
-		}
+		},
 
 	},
+
 
 	computed: {
 		footerItemLabel() {

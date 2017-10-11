@@ -8,5 +8,5 @@
 //- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
-div(:class="style")
+div(:class="style", @scroll="e => $emit('scroll', e)")
 	slot

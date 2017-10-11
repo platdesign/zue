@@ -16,7 +16,8 @@ viw(:class="{ [$css.component]:true, [$css.focus]: hasFocus || value }")
 		@input="e => updateValue(e.target.value)",
 		@keydown.esc.stop.prevent="resetValue",
 		@focus="hasFocus = true",
-		@blur="hasFocus = false"
+		@blur="hasFocus = false",
+		size="8"
 	)
 	button(
 		type="button",
