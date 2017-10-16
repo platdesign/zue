@@ -1,0 +1,21 @@
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+	Pug-Template for component
+
+	@name			elastic-header
+	@project 	zue
+	@author 	Christian Blaschke <mail@platdesign.de>
+	@since		October 12th 2017, 10:48:21 am
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+div(:class="$css.component")
+	header(:style="{ '--size': drag }")
+		span {{ drag }}
+	main(
+		@mousedown="startDrag",
+		@touchstart="startDrag",
+		@mousemove="moveDrag",
+		@touchmove="moveDrag",
+		@mouseup="stopDrag",
+		@touchend="stopDrag"
+	)

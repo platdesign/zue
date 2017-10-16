@@ -1,0 +1,26 @@
+/**
+ * Styles for elastic-header component.
+ *
+ * @name 			elastic-header
+ * @project 	zue
+ * @author 		Christian Blaschke <mail@platdesign.de>
+ * @since			October 12th 2017, 10:48:21 am
+ */
+
+.component {
+	background: red;
+	height: 500px;
+
+	overflow: auto;
+
+	> header {
+		--size: 0;
+		background: blue;
+		height: calc(var(--size) * 1px + 100px);
+	}
+
+	> main {
+		background: green;
+		height: 100%;
+	}
+}
