@@ -12,7 +12,7 @@ input-wrap(
 	:label="label",
 	:help="help"
 )
-	template(slot="default", scope="scope")
+	template(slot="default", slot-scope="scope")
 		z-address(
 			:street.sync="_street",
 			:zip.sync="_zip",

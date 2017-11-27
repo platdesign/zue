@@ -16,7 +16,7 @@ input-wrap(
 	template(slot="help", v-if="$slots.help")
 		slot(name="help")
 
-	template(slot="default", scope="scope")
+	template(slot="default", slot-scope="scope")
 		div(:class="$css.inputs")
 			input(
 				v-if="!multiline",

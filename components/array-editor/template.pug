@@ -18,7 +18,7 @@ viw(split="rows", spaced="1", :class="$css.component")
 			:loading="false",
 		)
 
-			template(slot="option", scope="item")
+			template(slot="option", slot-scope="item")
 				slot(name="item", :item="item.option", v-if="item.option")
 
 			template(slot="no-results")
