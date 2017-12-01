@@ -49,7 +49,8 @@ export default {
 			default: 'spinner'
 		},
 		to: true,
-		disabled: true
+		disabled: true,
+		tabindex: true
 	},
 
 	data() {

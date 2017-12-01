@@ -12,7 +12,8 @@ div(:class="$css.component")
 		:type="type",
 		:class="{ [$css[`cs-${cs}`]]: true }",
 		@click.stop="click",
-		:disabled="disabled"
+		:disabled="disabled",
+		:tabindex="tabindex"
 	)
 		fa(:class="$css.icon", :name="isPending ? pendingIcon : icon", :spin="isPending" v-if="icon")
 		span(v-if="$slots.default || label")

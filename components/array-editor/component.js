@@ -28,7 +28,7 @@ export default {
 			default: () => []
 		},
 		confirmDelete: {
-			type: String
+			type: [String, Function]
 		},
 		pendingDelete: {
 			type: Boolean
@@ -52,6 +52,22 @@ export default {
 			this.$emit('add', this.currentItem);
 			this.currentItem = null;
 			this.searchQuery = null;
+		}
+	},
+
+	computed: {
+		deleteConfirmer() {
+			return (item) => {
+				if (!this.confirmDelete) {
+					return false;
+				}
+
+				if (typeof this.confirmDelete === 'function') {
+					return this.confirmDelete(item);
+				}
+
+				return this.confirmDelete;
+			}
 		}
 	}
 

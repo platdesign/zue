@@ -39,7 +39,7 @@ viw(split="rows", spaced="1", :class="$css.component")
 			viw(collapse)
 				//-btn(icon="trash", cs="danger", @click="$emit('remove', item)")
 				btn(
-					:confirm="confirmDelete",
+					:confirm="deleteConfirmer(item)",
 					cs="danger",
 					icon="trash-o",
 					@click="$emit('remove', item)",
